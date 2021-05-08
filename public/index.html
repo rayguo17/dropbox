@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dropbox model</title>
+</head>
+<body>
+    <h1>Drop Box</h1>
+    <div>
+        <h2>Upload single file in here!</h2>
+        <form enctype="multipart/form-data" method="POST" action="/upload-profile-pic">
+            <div>
+                <label >choose a file:</label>
+                <input type="file"  name="profile_pic">   
+            </div>
+            <div>
+                <input type="submit" value="Upload" name="btn_upload_profile_pic"/>
+            </div>
+            
+        </form>
+    </div>
+    <hr>
+    <div>
+        <h2>Upload multiple file in here!</h2>
+        <form action="/upload-multiple-images" enctype="multipart/form-data" method="POST">
+            <div>
+                <label >choose files:</label>
+                <input type="file"  name="multiple_images" multiple>   
+            </div>
+            
+            <div>
+                <input type="submit" value="Upload" name="btn_upload_multiple_images">
+            </div>
+        </form>
+    </div>
+    <hr>
+    <div>
+        <h2>Not using Multer</h2>
+        <form enctype="multipart/form-data" method="POST" action="/uploader" >
+            <div>
+                <label >choose a file:</label>
+                <input type="file"  name="fileUploader">   
+            </div>
+            <div>
+                <input type="button" value="Upload" name="btn_upload_profile_pic" id="Submit"/>
+            </div>
+            
+        </form>
+    </div>
+    <div>
+        <h2>Download files</h2>
+        <form action="/search" id="formDownload">
+            <input type="text" placeholder="text name">
+            <input type="button" value="download" id="download">
+        </form>
+    </div>
+    <hr id="haha">
+    <div>
+        <h2>Cache Files</h2>
+        <ul id='cacheList'>
+            
+        </ul>
+    </div>
+    <hr>
+    <div>
+        <h2>Saved Files</h2>
+        <ul id="savedList">
+
+        </ul>
+    </div>
+    
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./assets/main.js"></script>
+</body>
+</html>
